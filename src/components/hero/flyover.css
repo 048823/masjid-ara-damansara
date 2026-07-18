@@ -1,0 +1,27 @@
+/*
+  Flyover hero, scene 1 idle Ken Burns loop.
+
+  This is the "nice loop" that plays before any scroll happens. It lives on
+  the INNER img of scene 1 so it never fights the GSAP timeline, which only
+  ever touches scene WRAPPERS (opacity) and the inner imgs of scenes 2 to 4
+  (scale). Scene 1's inner img is never a GSAP target, so CSS owns it fully.
+
+  The whole animation is gated behind prefers-reduced-motion: no-preference,
+  so a reduced motion visitor gets a still frame with no drift at all.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  .fh-kb {
+    will-change: transform;
+    transform-origin: 50% 45%;
+    animation: fh-kenburns 20s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes fh-kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}

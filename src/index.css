@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/*
+  Design tokens — BLUEPRINT.md §6.
+  Light values are the real CSS variable values; dark values override the
+  same variables inside a prefers-color-scheme: dark query. @theme maps
+  each Tailwind color to a var(--color-*) indirection so bg-kapur etc.
+  automatically follow the active scheme without a "dark:" variant class
+  anywhere in the app.
+*/
+
+:root {
+  --kapur: #f6f5f1;
+  --surface: #ffffff;
+  --arang: #17221f;
+  --arang-2: #4a5553;
+  --firus: #0f857e;
+  --firus-deep: #0a625d;
+  --firus-wash: #e7f2f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --kapur: #0f1514;
+    --surface: #161e1c;
+    --arang: #ecefec;
+    --arang-2: #a3adaa;
+    --firus: #3ab5ac;
+    --firus-deep: #5ecfc6;
+    --firus-wash: #132320;
+  }
+}
+
+/*
+  @theme maps each Tailwind color name to the raw :root variable above
+  (different variable namespace to avoid self-reference), so bg-kapur,
+  text-arang, border-firus etc. all resolve through the indirection and
+  adapt automatically when the dark media query flips the raw values.
+*/
+@theme {
+  --color-kapur: var(--kapur);
+  --color-surface: var(--surface);
+  --color-arang: var(--arang);
+  --color-arang-2: var(--arang-2);
+  --color-firus: var(--firus);
+  --color-firus-deep: var(--firus-deep);
+  --color-firus-wash: var(--firus-wash);
+
+  --font-sans: "Outfit Variable", "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background-color: var(--color-kapur);
+  color: var(--color-arang);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-firus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
