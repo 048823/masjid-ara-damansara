@@ -36,7 +36,7 @@ export default function Programs() {
             className="flex flex-col overflow-hidden rounded-[18px] border border-arang/5 bg-surface md:col-span-5"
           >
             <img
-              src="/images/hero-approach.jpg"
+              src={`${import.meta.env.BASE_URL}images/hero-approach.jpg`}
               alt={t.prog.item1.title}
               loading="lazy"
               className="aspect-[4/5] w-full object-cover"

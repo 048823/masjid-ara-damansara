@@ -55,25 +55,25 @@ export default function Nikah() {
           className="mt-16 hidden grid-cols-12 gap-4 md:grid"
         >
           <img
-            src="/images/nikah-arch.jpg"
+            src={`${import.meta.env.BASE_URL}images/nikah-arch.jpg`}
             alt={t.nikah.imgAlt1}
             loading="lazy"
             className="col-span-3 aspect-[3/4] w-full rounded-[18px] object-cover"
           />
           <img
-            src="/images/nikah-garden.jpg"
+            src={`${import.meta.env.BASE_URL}images/nikah-garden.jpg`}
             alt={t.nikah.imgAlt2}
             loading="lazy"
             className="col-span-3 aspect-[3/4] w-full rounded-[18px] object-cover"
           />
           <img
-            src="/images/nikah-akad.jpg"
+            src={`${import.meta.env.BASE_URL}images/nikah-akad.jpg`}
             alt={t.nikah.imgAlt3}
             loading="lazy"
             className="col-span-6 aspect-[4/3] w-full rounded-[18px] object-cover"
           />
           <img
-            src="/images/hero-wedding.jpg"
+            src={`${import.meta.env.BASE_URL}images/hero-wedding.jpg`}
             alt={t.hero.scene4}
             loading="lazy"
             className="col-span-7 col-start-6 aspect-[16/9] w-full rounded-[18px] object-cover"
@@ -83,25 +83,25 @@ export default function Nikah() {
         {/* Mobile: 2-col grid, varied aspect ratios keep it from feeling like equal cards */}
         <div className="mt-12 grid grid-cols-2 gap-3 md:hidden">
           <img
-            src="/images/nikah-arch.jpg"
+            src={`${import.meta.env.BASE_URL}images/nikah-arch.jpg`}
             alt={t.nikah.imgAlt1}
             loading="lazy"
             className="aspect-[3/4] w-full rounded-[18px] object-cover"
           />
           <img
-            src="/images/nikah-garden.jpg"
+            src={`${import.meta.env.BASE_URL}images/nikah-garden.jpg`}
             alt={t.nikah.imgAlt2}
             loading="lazy"
             className="aspect-[3/4] w-full rounded-[18px] object-cover"
           />
           <img
-            src="/images/nikah-akad.jpg"
+            src={`${import.meta.env.BASE_URL}images/nikah-akad.jpg`}
             alt={t.nikah.imgAlt3}
             loading="lazy"
             className="col-span-2 aspect-[16/9] w-full rounded-[18px] object-cover"
           />
           <img
-            src="/images/hero-wedding.jpg"
+            src={`${import.meta.env.BASE_URL}images/hero-wedding.jpg`}
             alt={t.hero.scene4}
             loading="lazy"
             className="col-span-2 aspect-[16/9] w-full rounded-[18px] object-cover"

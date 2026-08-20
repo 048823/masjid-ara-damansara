@@ -38,19 +38,19 @@ export default function Architecture() {
           className="hidden grid-cols-2 grid-rows-2 gap-4 md:col-span-7 md:grid"
         >
           <img
-            src="/images/arch-roof.jpg"
+            src={`${import.meta.env.BASE_URL}images/arch-roof.jpg`}
             alt={t.arch.imgAlt1}
             loading="lazy"
             className="row-span-2 h-full w-full rounded-[18px] object-cover object-[70%_50%]"
           />
           <img
-            src="/images/arch-sign.jpg"
+            src={`${import.meta.env.BASE_URL}images/arch-sign.jpg`}
             alt={t.arch.imgAlt2}
             loading="lazy"
             className="aspect-square w-full rounded-[18px] object-cover"
           />
           <img
-            src="/images/hero-courtyard.webp"
+            src={`${import.meta.env.BASE_URL}images/hero-courtyard.webp`}
             alt={t.arch.imgAlt3}
             loading="lazy"
             className="aspect-square w-full rounded-[18px] object-cover"
@@ -60,19 +60,19 @@ export default function Architecture() {
         {/* Mobile: horizontal-scroll snap strip */}
         <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:hidden">
           <img
-            src="/images/arch-roof.jpg"
+            src={`${import.meta.env.BASE_URL}images/arch-roof.jpg`}
             alt={t.arch.imgAlt1}
             loading="lazy"
             className="aspect-[3/4] w-[78%] flex-shrink-0 snap-center rounded-[18px] object-cover object-[70%_50%]"
           />
           <img
-            src="/images/arch-sign.jpg"
+            src={`${import.meta.env.BASE_URL}images/arch-sign.jpg`}
             alt={t.arch.imgAlt2}
             loading="lazy"
             className="aspect-[3/4] w-[78%] flex-shrink-0 snap-center rounded-[18px] object-cover"
           />
           <img
-            src="/images/hero-courtyard.webp"
+            src={`${import.meta.env.BASE_URL}images/hero-courtyard.webp`}
             alt={t.arch.imgAlt3}
             loading="lazy"
             className="aspect-[3/4] w-[78%] flex-shrink-0 snap-center rounded-[18px] object-cover"

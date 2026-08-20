@@ -126,7 +126,7 @@ export default function FlyoverHero() {
           motion / save-data) the still keeps its CSS Ken Burns idle drift. */}
       <div className="fh-s1 absolute inset-0">
         <img
-          src="/images/hero-aerial.jpg"
+          src={`${import.meta.env.BASE_URL}images/hero-aerial.jpg`}
           alt=""
           aria-hidden="true"
           loading="eager"
@@ -149,8 +149,8 @@ export default function FlyoverHero() {
         {renderVideo && !videoFailed && (
           <video
             ref={videoRef}
-            src="/videos/hero-loop.mp4"
-            poster="/images/hero-aerial.jpg"
+            src={`${import.meta.env.BASE_URL}videos/hero-loop.mp4`}
+            poster={`${import.meta.env.BASE_URL}images/hero-aerial.jpg`}
             autoPlay
             muted
             loop
@@ -173,7 +173,7 @@ export default function FlyoverHero() {
         <>
           <div className="fh-s2 absolute inset-0 opacity-0">
             <img
-              src="/images/hero-approach.jpg"
+              src={`${import.meta.env.BASE_URL}images/hero-approach.jpg`}
               alt=""
               aria-hidden="true"
               loading="lazy"
@@ -183,7 +183,7 @@ export default function FlyoverHero() {
           </div>
           <div className="fh-s3 absolute inset-0 opacity-0">
             <img
-              src="/images/hero-courtyard.webp"
+              src={`${import.meta.env.BASE_URL}images/hero-courtyard.webp`}
               alt=""
               aria-hidden="true"
               loading="lazy"
@@ -193,7 +193,7 @@ export default function FlyoverHero() {
           </div>
           <div className="fh-s4 absolute inset-0 opacity-0">
             <img
-              src="/images/hero-wedding.jpg"
+              src={`${import.meta.env.BASE_URL}images/hero-wedding.jpg`}
               alt=""
               aria-hidden="true"
               loading="lazy"
