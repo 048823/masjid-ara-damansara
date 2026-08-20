@@ -15,6 +15,31 @@ npm run build     # type-check (tsc -b) then production build to dist/
 npm run preview   # preview the production build locally
 ```
 
+## Deploying
+
+Published via GitHub Pages (legacy branch build) from the `gh-pages` branch at
+https://048823.github.io/masjid-ara-damansara/.
+
+Because that is a *project* site served from a subpath, `vite.config.ts` sets
+`base: "/masjid-ara-damansara/"`. Any reference to a file in `public/` must be
+built from `import.meta.env.BASE_URL` (e.g.
+``src={`${import.meta.env.BASE_URL}images/foo.jpg`}``) — Vite does not rewrite
+hardcoded root-absolute paths like `/images/foo.jpg`, and they 404 in
+production while working fine in dev.
+
+Deploy the contents of `dist/` **only** — never the working tree. A previous
+deploy pushed the whole directory, including `node_modules`, and shipped an
+`index.html` pointing at root-absolute asset URLs, which served a blank page.
+
+```bash
+npm run build
+git worktree add /tmp/ghp gh-pages
+find /tmp/ghp -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+cp -R dist/. /tmp/ghp/ && touch /tmp/ghp/.nojekyll
+cd /tmp/ghp && git add -A && git commit -m "Deploy" && git push origin gh-pages
+cd - && git worktree remove /tmp/ghp
+```
+
 ## Image licensing caveat
 
 Nine reference photos were copied into `public/images/` from raw stock/phone
